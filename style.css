@@ -1,0 +1,205 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ffe6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  color: #eb66ad;
+}
+
+.container {
+  background: #fff;
+  width: 90%; /* Adjusted for mobile */
+  max-width: 380px; /* Ensures it doesn't get too wide on larger phones */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group i {
+  position: absolute;
+  color: rgb(252, 39, 149);
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+  border: 2px solid hsl(327, 90%, 28%);
+  outline: none;
+}
+
+input::placeholder {
+  color: transparent;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  font-size: 14px;
+  color: #b0b0b0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  top: -15px;
+  font-size: 12px;
+  color: hsl(327, 90%, 28%);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: rgb(204, 17, 114);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #eb66ad;
+}
+
+/* Checkbox Styles */
+.interests-group {
+  margin-bottom: 1.5rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem; /* Adds space between checkboxes */
+  gap: 10px; /* Adds space between the checkbox and label */
+}
+
+.checkbox input {
+  width: 18px; /* Adjust the size of the checkbox */
+  height: 18px; /* Adjust the size of the checkbox */
+  accent-color: rgb(252, 39, 149); /* Custom color for checkboxes */
+}
+
+.checkbox label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  user-select: none; /* Prevents text selection when clicking */
+}
+
+.checkbox input:checked + label {
+  color: hsl(327, 90%, 28%); /* Color when checked */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+}
+
+/* Standardize the appearance of the select dropdown */
+select {
+  -webkit-appearance: none; /* Removes default styling in Safari/Chrome */
+  -moz-appearance: none;    /* Removes default styling in Firefox */
+  appearance: none;         /* Removes default styling in modern browsers */
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Aligns padding with other inputs */
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><polygon points="70,98 98,42 42,42" fill="%23ccc"/></svg>') no-repeat right 10px center;
+  background-size: 12px;
+  color:#b0b0b0;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+}
+
+select:focus {
+  border: 2px solid hsl(327, 90%, 28%);
+  outline: none;
+}
+
+select option {
+  color: #333;
+  background: #fff;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 40px; /* Adjusted for alignment with the dropdown icon */
+  font-size: 14px;
+  color: #b0b0b0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+select:focus ~ label,
+select:not([value=""]) ~ label {
+  top: -15px;
+  font-size: 12px;
+  color: hsl(0, 0%, 100%);
+}
+
+/* For a consistent dropdown arrow experience */
+select::-ms-expand {
+  display: none; /* Hides the dropdown arrow in older IE/Edge */
+}
+
+.logo-container {
+  text-align: center;
+  /*margin-bottom: 1rem; /* Adds space below the logo */
+}
+
+.logo {
+  width: 200px; /* Adjust to fit your design */
+  max-width: 300px; /* Ensures responsiveness */
+  height: auto; /* Maintains aspect ratio */
+  display: inline-block;
+}
